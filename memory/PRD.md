@@ -18,6 +18,7 @@ Sections: hero (animated tunnel + pills), trusted-by strip, selected work (4 cas
 
 ## Implemented
 - 2026-10-21: Exact 1-on-1 rebuild served on the Emergent preview; all embedded photos/logos reused; favicon added; verified desktop 1366px, tablet 768px, mobile 375px; backend /api/ healthy.
+- 2026-10-24: FAQ section removed on user request (section markup + nav link; unused .faq CSS left in place, harmless).
 
 ## Backlog / next tasks
 - P1: Working contact form (saves enquiries to DB) if user wants more than mailto.
