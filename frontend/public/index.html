@@ -1,5 +1,24 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
-<title>Koodh Media Group</title>
+<!doctype html><html lang="en"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>Koodh Media Group — Audio branding &amp; event photography</title>
+<meta name="description" content="Koodh Media Group creates audio branding for radio — jingles, sweepers and promos — and captures live events through photography and drone video.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#150625">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Koodh Media Group">
+<meta property="og:title" content="Koodh Media Group — Audio branding &amp; event photography">
+<meta property="og:description" content="Koodh Media Group creates audio branding for radio — jingles, sweepers and promos — and captures live events through photography and drone video.">
+<meta property="og:image" content="https://nbg1.your-objectstorage.com/koodh-clara/content/c30fe594-c18d-4b10-afb5-4b5b21adcc67/6dae3664-086c-4e2d-ab82-e6d7a9b9e6a3_2c8ef555.jpg">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1365">
+<meta property="og:image:alt" content="Radio presenter at the mixing desk during a live GRK broadcast">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Koodh Media Group — Audio branding &amp; event photography">
+<meta name="twitter:description" content="Koodh Media Group creates audio branding for radio — jingles, sweepers and promos — and captures live events through photography and drone video.">
+<meta name="twitter:image" content="https://nbg1.your-objectstorage.com/koodh-clara/content/c30fe594-c18d-4b10-afb5-4b5b21adcc67/6dae3664-086c-4e2d-ab82-e6d7a9b9e6a3_2c8ef555.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Koodh Media Group","description":"Koodh Media Group creates audio branding for radio — jingles, sweepers and promos — and captures live events through photography and drone video.","email":"yannick.gijbels@koodhmediagroup.com","knowsAbout":["Radio imaging","Jingles and music beds","Sweepers and promos","Event and festival photography","Drone photography and video"]}</script><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<noscript><h1>Creating new experiences</h1><p>Koodh Media Group creates audio branding for radio and captures the energy of live events through photography. We help stations and events sound and look unforgettable.</p><p>Email: yannick.gijbels@koodhmediagroup.com</p></noscript>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
@@ -1128,6 +1147,16 @@ BAT  <b>76%</b>  <em>● GPS</em></code>`
   window.scrollTo(0,0);
   fetch(API+"/articles/"+encodeURIComponent(m[1])).then(r=>{if(!r.ok)throw new Error();return r.json()}).then(a=>{
     document.title=a.title+" \u00b7 Koodh Media Group";
+    const setM=(k,v,at)=>{if(!v)return;let el=document.querySelector('meta['+(at||'property')+'="'+k+'"]');if(!el){el=document.createElement('meta');el.setAttribute(at||'property',k);document.head.appendChild(el);}el.setAttribute('content',v);};
+    const tmp=document.createElement('div');tmp.innerHTML=a.body||'';
+    tmp.querySelectorAll('.clara-image-credit,audio').forEach(n=>{(n.closest('p')||n).remove();});
+    const plain=tmp.textContent.replace(/\s+/g,' ').trim();
+    const adesc=(a.excerpt&&a.excerpt.trim()?a.excerpt.trim():plain).slice(0,200);
+    setM('og:title',a.title+' \u00b7 Koodh Media Group');setM('og:description',adesc);setM('og:type','article');setM('og:url',location.href);
+    if(a.image_url){['og:image:width','og:image:height'].forEach(k=>{const el=document.querySelector('meta[property="'+k+'"]');if(el)el.remove();});setM('og:image',a.image_url);setM('twitter:image',a.image_url,'name');}
+    setM('twitter:card','summary_large_image','name');setM('twitter:title',a.title,'name');setM('twitter:description',adesc,'name');
+    if(a.published_at)setM('article:published_time',a.published_at);
+    const dm=document.querySelector('meta[name="description"]');if(dm)dm.setAttribute('content',adesc);
     document.getElementById("atitle").textContent=a.title;
     const meta=[];
     if(a.published_at)meta.push(new Date(a.published_at).toLocaleDateString("en-GB",{day:"numeric",month:"long",year:"numeric"}));

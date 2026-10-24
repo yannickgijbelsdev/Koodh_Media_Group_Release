@@ -1,0 +1,22 @@
+# Koodh Media Group
+
+Koodh Media Group creates audio branding for radio and captures the energy of live events through photography. The team helps radio stations and events sound and look unforgettable.
+
+## Services
+
+- Radio imaging: sweepers, station IDs, promos and show elements
+- Jingles and music beds, written together with the client
+- Event and festival photography, with fast delivery of edited highlights
+- Drone photography and video of events, buildings and landscapes
+
+Work covers radio stations, festivals and live events across the Netherlands and Belgium.
+
+## Pages
+
+- / — homepage: selected work, services, team and contact
+- /nieuws/<slug> — individual news articles and project stories, served from the Clara news API
+
+## Contact
+
+- Email: yannick.gijbels@koodhmediagroup.com
+- KVK: 42066318

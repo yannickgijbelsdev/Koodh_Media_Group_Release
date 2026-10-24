@@ -21,12 +21,13 @@ Sections: hero (animated tunnel + pills), trusted-by strip, selected work (4 cas
 - 2026-10-24: FAQ section removed on user request (section markup + nav link; unused .faq CSS left in place, harmless).
 - 2026-10-24: Trusted-by logo "Radiogroep" replaced with the user-supplied UpLite logo (white background made transparent, embedded as base64); on user request recolored to white to match the other logos.
 - 2026-10-24: News integration live — "Selected work" cards fetch from https://clr.koodh.com/api/news/koodh-media-group/homepagina (HTTPS, avoids mixed content; static cards remain as fallback). Article view at /nieuws/<slug> (SPA fallback route in the same index.html) fetches https://clr.koodh.com/api/news/articles/{slug_or_id}, reuses homepage nav/footer/logo, renders title, date, tags, hero image + credit, body HTML incl. audio players. mountTunnel exposed as window.__mountTunnel for the cloned footer (id tunnel3). Duplicate leading image-credit paragraph stripped from body when already shown as figcaption.
+- 2026-10-24: Share/SEO setup (farm-seo-setup skill): static head now has title, description, robots meta, theme-color, apple-touch-icon (generated), full OG + Twitter tags (og:image = absolute GRK studio photo from Clara objectstorage, real dims), JSON-LD Organization, noscript fallback, robots.txt + llms.txt in public/. Article router sets per-article document.title, description, og:type=article, og:title/description/image/url, twitter:card=summary_large_image, article:published_time (description = article text with credit/audio stripped, entities decoded). og-image.jpg (1200×630 crop of Genk festival photo) ready in public/ for when a production domain is confirmed. Omitted pending domain: canonical, og:url (static), sitemap.xml. Source assets backed up in /app/scripts/source/.
 
 ## Backlog / next tasks
 - P1: Working contact form (saves enquiries to DB) if user wants more than mailto.
-- P2: Dedicated project detail pages for the 4 work cases (currently external links).
 - P2: Dutch/English language toggle.
-- P3: SEO/meta & OG tags for sharing (currently minimal head from export).
+- P2: News overview page (grid of all articles) so "All work" stops linking externally.
+- P3 (pending production domain): canonical + static og:url + sitemap.xml; swap og:image to /og-image.jpg (1200×630, already in public/).
 
 ## Test credentials
 None — public static site, no auth.
