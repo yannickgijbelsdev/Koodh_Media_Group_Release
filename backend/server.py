@@ -67,6 +67,31 @@ async def get_status_checks():
     return status_checks
 
 # Include the router in the main app
+import time
+import requests as _requests
+
+CLARA_API = "https://clr.koodh.com/api/news"
+_news_cache = {}
+
+def _proxy_news(path: str):
+    now = time.time()
+    hit = _news_cache.get(path)
+    if hit and now - hit[0] < 60:
+        return hit[1]
+    r = _requests.get(f"{CLARA_API}/{path}", timeout=10)
+    r.raise_for_status()
+    data = r.json()
+    _news_cache[path] = (now, data)
+    return data
+
+@api_router.get("/news/homepagina")
+def news_homepagina():
+    return _proxy_news("koodh-media-group/homepagina")
+
+@api_router.get("/news/articles/{article_id}")
+def news_article(article_id: str):
+    return _proxy_news(f"articles/{article_id}")
+
 app.include_router(api_router)
 
 app.add_middleware(
