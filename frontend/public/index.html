@@ -871,6 +871,13 @@ body.am > .frame,body.am > #dock,body.am > .legal{display:none!important}
 .abody blockquote{margin:0 0 22px;padding:14px 20px;border-left:3px solid #F96F4F;background:rgba(255,255,255,.05);border-radius:0 14px 14px 0}
 .abody .clara-image-credit{font-family:var(--f-mono);font-size:11px;color:rgba(243,235,255,.5);margin:-12px 0 24px}
 .aerr{color:rgba(243,235,255,.7)}
+.aplayer{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:10px 18px 10px 10px;margin:8px 0 26px;backdrop-filter:blur(12px)}
+.aplay{flex:none;width:44px;height:44px;border-radius:50%;border:0;cursor:pointer;background:linear-gradient(135deg,#B78CFF,#F96F4F);display:flex;align-items:center;justify-content:center;transition:transform .25s cubic-bezier(.22,1,.36,1),box-shadow .25s;padding:0}
+.aplay:hover{transform:scale(1.07);box-shadow:0 8px 24px -6px rgba(249,111,79,.5)}
+.aplay svg{width:16px;height:16px;fill:#fff;display:block}
+.atrack{flex:1;height:6px;border-radius:999px;background:rgba(255,255,255,.14);cursor:pointer;position:relative;min-width:60px}
+.afill{position:absolute;top:0;left:0;bottom:0;width:0%;border-radius:999px;background:linear-gradient(90deg,#B78CFF,#F96F4F)}
+.atime{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;color:rgba(243,235,255,.6);flex:none;white-space:nowrap}
 </style>
 
 <div id="aview" hidden>
@@ -1170,6 +1177,24 @@ BAT  <b>76%</b>  <em>● GPS</em></code>`
     }else fig.remove();
     const ab=document.getElementById("abody");ab.innerHTML=a.body||"";
     if(a.image_caption_html){const dup=ab.querySelector(".clara-image-credit");if(dup)dup.closest("p")?dup.remove():null;}
+    const PLAY='<svg viewBox="0 0 16 16"><path d="M4 2l10 6-10 6z"/></svg>',PAUSE='<svg viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg>';
+    ab.querySelectorAll("audio").forEach(el=>{
+      el.removeAttribute("controls");el.style.display="none";
+      const host=el.closest("p")||el;
+      const w=document.createElement("div");w.className="aplayer";
+      w.innerHTML='<button class="aplay" type="button" aria-label="Play fragment">'+PLAY+'</button><div class="atrack"><div class="afill"></div></div><span class="atime">0:00 / 0:00</span>';
+      host.parentNode.insertBefore(w,host.nextSibling);
+      if(host!==el&&!host.textContent.trim()&&!host.children.length)host.remove();
+      const btn=w.querySelector(".aplay"),track=w.querySelector(".atrack"),fill=w.querySelector(".afill"),tm=w.querySelector(".atime");
+      const fmt=s=>{if(!isFinite(s))return"0:00";s=Math.floor(s);return Math.floor(s/60)+":"+String(s%60).padStart(2,"0")};
+      const upd=()=>{fill.style.width=(el.currentTime/el.duration*100||0)+"%";tm.textContent=fmt(el.currentTime)+" / "+fmt(el.duration)};
+      el.addEventListener("timeupdate",upd);el.addEventListener("loadedmetadata",upd);el.addEventListener("durationchange",upd);
+      el.addEventListener("play",()=>btn.innerHTML=PAUSE);
+      el.addEventListener("pause",()=>btn.innerHTML=PLAY);
+      el.addEventListener("ended",()=>{btn.innerHTML=PLAY;el.currentTime=0;upd()});
+      btn.addEventListener("click",()=>{if(el.paused){ab.querySelectorAll("audio").forEach(o=>{if(o!==el)o.pause()});el.play()}else el.pause()});
+      track.addEventListener("click",e=>{const r=track.getBoundingClientRect();if(isFinite(el.duration))el.currentTime=Math.min(Math.max((e.clientX-r.left)/r.width,0),1)*el.duration});
+    });
   }).catch(()=>{
     document.getElementById("atitle").textContent="Article not found";
     document.getElementById("ahero").remove();
