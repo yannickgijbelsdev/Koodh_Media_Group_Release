@@ -19,7 +19,7 @@ Sections: hero (animated tunnel + pills), trusted-by strip, selected work (4 cas
 ## Implemented
 - 2026-10-21: Exact 1-on-1 rebuild served on the Emergent preview; all embedded photos/logos reused; favicon added; verified desktop 1366px, tablet 768px, mobile 375px; backend /api/ healthy.
 - 2026-10-24: FAQ section removed on user request (section markup + nav link; unused .faq CSS left in place, harmless).
-- 2026-10-24: Trusted-by logo "Radiogroep" replaced with the user-supplied UpLite logo (white background made transparent, embedded as base64 like the other logos).
+- 2026-10-24: Trusted-by logo "Radiogroep" replaced with the user-supplied UpLite logo (white background made transparent, embedded as base64); on user request recolored to white to match the other logos.
 
 ## Backlog / next tasks
 - P1: Working contact form (saves enquiries to DB) if user wants more than mailto.
