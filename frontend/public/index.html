@@ -892,7 +892,6 @@ body.am > .frame,body.am > #dock,body.am > .legal{display:none!important}
         <article class="apage">
           <a class="aback" href="/">&larr; Back to homepage</a>
           <h1 class="atitle" id="atitle">Loading&hellip;</h1>
-          <p class="ameta" id="ameta"></p>
           <div class="atags" id="atags"></div>
           <figure class="ahero" id="ahero"><img alt=""><figcaption></figcaption></figure>
           <div class="abody" id="abody"></div>
@@ -1165,11 +1164,6 @@ BAT  <b>76%</b>  <em>● GPS</em></code>`
     if(a.published_at)setM('article:published_time',a.published_at);
     const dm=document.querySelector('meta[name="description"]');if(dm)dm.setAttribute('content',adesc);
     document.getElementById("atitle").textContent=a.title;
-    const meta=[];
-    if(a.published_at)meta.push(new Date(a.published_at).toLocaleDateString("en-GB",{day:"numeric",month:"long",year:"numeric"}));
-    if(a.category&&a.category.name)meta.push(a.category.name);
-    if(a.author_name)meta.push(a.author_name);
-    document.getElementById("ameta").textContent=meta.join("  \u00b7  ");
     if(a.tags&&a.tags.length)document.getElementById("atags").innerHTML=a.tags.map(t=>"<span>"+esc(typeof t==="string"?t:(t.name||""))+"</span>").join("");
     const fig=document.getElementById("ahero");
     if(a.image_url){const im=fig.querySelector("img");im.src=a.image_url;im.alt=a.title;
