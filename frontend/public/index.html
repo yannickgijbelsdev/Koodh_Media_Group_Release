@@ -823,6 +823,76 @@ h2 em{background:linear-gradient(100deg,#B78CFF 0%,#F96F4F 100%);-webkit-backgro
   </div>
 </footer>
 </div>
+
+<style>
+/* ---------- article (nieuws) view ---------- */
+#aview[hidden]{display:none!important}
+body.am > .frame,body.am > #dock,body.am > .legal{display:none!important}
+.awrap{padding-top:calc(var(--gap) + 120px);padding-bottom:clamp(40px,6vw,80px);min-height:70svh}
+.apage{max-width:820px;margin:0 auto}
+.aback{display:inline-flex;align-items:center;gap:8px;color:#C09BF7;text-decoration:none;font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:30px;transition:color .3s}
+.aback:hover{color:#FFFFFF}
+.atitle{font-family:var(--f-display);font-weight:600;font-size:clamp(32px,4.6vw,56px);letter-spacing:-.035em;line-height:1.05;color:#FFFFFF;margin:0 0 16px}
+.ameta{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#C09BF7;margin:0 0 26px}
+.atags{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 26px}
+.atags:empty{display:none}
+.atags span{height:28px;display:inline-flex;align-items:center;padding:0 12px;border-radius:999px;font-size:12px;font-weight:500;background:rgba(255,255,255,.1);color:#F5EEFF}
+.ahero{margin:0 0 34px}
+.ahero img{width:100%;height:auto;display:block;aspect-ratio:16/9;object-fit:cover;border-radius:22px;box-shadow:0 30px 60px -30px rgba(0,0,0,.5)}
+.ahero figcaption{font-family:var(--f-mono);font-size:11px;color:rgba(243,235,255,.5);padding:10px 4px 0}
+.ahero figcaption p{margin:0}
+.abody{color:rgba(243,235,255,.88);font-size:17px;line-height:1.75}
+.abody p{margin:0 0 22px}
+.abody strong{color:#FFFFFF}
+.abody a{color:#B78CFF}
+.abody audio{width:100%;margin:4px 0 8px;display:block}
+.abody img{width:100%;height:auto;border-radius:16px;margin:6px 0}
+.abody h2,.abody h3,.abody h4{color:#FFFFFF;font-family:var(--f-display);letter-spacing:-.02em;line-height:1.15;margin:36px 0 14px}
+.abody ul,.abody ol{margin:0 0 22px;padding-left:22px}
+.abody blockquote{margin:0 0 22px;padding:14px 20px;border-left:3px solid #F96F4F;background:rgba(255,255,255,.05);border-radius:0 14px 14px 0}
+.abody .clara-image-credit{font-family:var(--f-mono);font-size:11px;color:rgba(243,235,255,.5);margin:-12px 0 24px}
+.aerr{color:rgba(243,235,255,.7)}
+</style>
+
+<div id="aview" hidden>
+  <nav class="dock" aria-label="Main">
+  <a class="hide-m" href="/#work">Work</a><a class="hide-m" href="/#services">Services</a><a class="hide-m" href="/#about">About</a><a class="hide-m" href="/#team">Team</a>
+  <span class="sep"></span>
+  <a class="cta" href="/#contact">Let’s talk <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+</nav>
+  <div class="frame">
+    <main class="awrap">
+      <div class="wrap">
+        <article class="apage">
+          <a class="aback" href="/">&larr; Back to homepage</a>
+          <h1 class="atitle" id="atitle">Loading&hellip;</h1>
+          <p class="ameta" id="ameta"></p>
+          <div class="atags" id="atags"></div>
+          <figure class="ahero" id="ahero"><img alt=""><figcaption></figcaption></figure>
+          <div class="abody" id="abody"></div>
+        </article>
+      </div>
+    </main>
+<footer class="foot">
+  <div class="tunnel" id="tunnel3"></div>
+  <div class="wrap center">
+    <span class="eyebrow"><svg viewBox="66 26 42 51" aria-hidden="true"><polygon points="91.95,30.476 98.589,30.476 77.733,47.939 102.696,72.502 96.441,72.502 71.467,47.939"/></svg> Contact</span>
+    <h2>Let’s start a<br>conversation.</h2>
+    <div class="who">Got a station to brand or an event to capture? Drop us a line and we’ll get back to you. Real people, no ticket numbers.</div>
+    <div class="actions"><a class="btn white" href="mailto:yannick.gijbels@koodhmediagroup.com">Send an e-mail <span class="go"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h10M8 3l4 4-4 4"/></svg></span></a></div>
+    <div class="next"><div><small>01</small><b>You reach out</b><span>A short e-mail about your station, event or idea is enough.</span></div><div><small>02</small><b>We think along</b><span>We reply with honest advice and a clear next step.</span></div><div><small>03</small><b>We get to work</b><span>Once it clicks, we turn the plan into sound and images.</span></div></div>
+  </div>
+  <div class="pat"><svg viewBox="0 0 1440 440" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><g fill="none" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"><path class="s" d="M-195 39L65 299" stroke="#7442D0" stroke-opacity="0.47" style="animation-delay:0.00s"/><path class="s" d="M-65 39L65 169" stroke="#F96F4F" stroke-opacity="0.50" style="animation-delay:6.63s"/><path class="s" d="M65 39L455 429" stroke="#B78CFF" stroke-opacity="0.39" style="animation-delay:6.26s"/><path class="s" d="M195 39L585 429" stroke="#C2477A" stroke-opacity="0.67" style="animation-delay:5.89s"/><path class="s" d="M455 39L715 299" stroke="#FFB199" stroke-opacity="0.78" style="animation-delay:5.52s"/><path class="s" d="M585 39L715 169" stroke="#7442D0" stroke-opacity="0.46" style="animation-delay:5.15s"/><path class="b" d="M845 -91L715 39L845 169" stroke="#F96F4F" stroke-opacity="0.85" style="animation-delay:4.78s"/><path class="s" d="M975 39L1235 299" stroke="#C2477A" stroke-opacity="0.71" style="animation-delay:4.41s"/><path class="s" d="M1365 39L1495 169" stroke="#7442D0" stroke-opacity="0.68" style="animation-delay:4.04s"/><path class="s" d="M1495 39L1625 169" stroke="#F96F4F" stroke-opacity="0.70" style="animation-delay:3.67s"/><path class="s" d="M1755 39L2015 299" stroke="#C2477A" stroke-opacity="0.71" style="animation-delay:3.30s"/><path class="s" d="M-195 169L-65 299" stroke="#2D067B" stroke-opacity="0.75" style="animation-delay:2.93s"/><path class="b" d="M65 39L-65 169L65 299" stroke="#F96F4F" stroke-opacity="0.83" style="animation-delay:2.56s"/><path class="s" d="M65 169L195 299" stroke="#7442D0" stroke-opacity="0.46" style="animation-delay:2.19s"/><path class="b" d="M715 39L585 169L715 299" stroke="#7442D0" stroke-opacity="0.90" style="animation-delay:1.82s"/><path class="s" d="M715 169L845 299" stroke="#FFB199" stroke-opacity="0.50" style="animation-delay:1.45s"/><path class="b" d="M1105 39L975 169L1105 299" stroke="#F96F4F" stroke-opacity="0.93" style="animation-delay:1.08s"/><path class="s" d="M1105 169L1495 559" stroke="#B78CFF" stroke-opacity="0.57" style="animation-delay:0.71s"/><path class="s" d="M1365 169L1625 429" stroke="#2D067B" stroke-opacity="0.44" style="animation-delay:0.34s"/><path class="s" d="M1625 169L1755 39" stroke="#C2477A" stroke-opacity="0.34" style="animation-delay:6.97s"/><path class="s" d="M-195 299L-65 169" stroke="#FFB199" stroke-opacity="0.31" style="animation-delay:6.60s"/><path class="s" d="M-65 299L325 689" stroke="#C2477A" stroke-opacity="0.73" style="animation-delay:6.23s"/><path class="s" d="M325 299L455 429" stroke="#7442D0" stroke-opacity="0.40" style="animation-delay:5.86s"/><path class="s" d="M455 299L585 169" stroke="#2D067B" stroke-opacity="0.59" style="animation-delay:5.49s"/><path class="s" d="M585 299L975 689" stroke="#B78CFF" stroke-opacity="0.58" style="animation-delay:5.12s"/><path class="s" d="M975 299L1365 689" stroke="#FFB199" stroke-opacity="0.70" style="animation-delay:4.75s"/><path class="b" d="M1235 169L1105 299L1235 429" stroke="#7442D0" stroke-opacity="0.82" style="animation-delay:4.38s"/><path class="s" d="M1365 299L1625 559" stroke="#B78CFF" stroke-opacity="0.44" style="animation-delay:4.01s"/><path class="s" d="M1495 299L1885 689" stroke="#C2477A" stroke-opacity="0.69" style="animation-delay:3.64s"/><path class="s" d="M1625 299L2015 689" stroke="#2D067B" stroke-opacity="0.50" style="animation-delay:3.27s"/><path class="s" d="M1755 299L1885 429" stroke="#FFB199" stroke-opacity="0.45" style="animation-delay:2.90s"/><path class="s" d="M-195 429L-65 559" stroke="#7442D0" stroke-opacity="0.49" style="animation-delay:2.53s"/><path class="s" d="M-65 429L325 819" stroke="#F96F4F" stroke-opacity="0.70" style="animation-delay:2.16s"/><path class="b" d="M195 299L65 429L195 559" stroke="#7442D0" stroke-opacity="0.91" style="animation-delay:1.79s"/><path class="s" d="M325 429L455 559" stroke="#2D067B" stroke-opacity="0.60" style="animation-delay:1.42s"/><path class="b" d="M585 299L455 429L585 559" stroke="#F96F4F" stroke-opacity="0.88" style="animation-delay:1.05s"/><path class="b" d="M715 299L585 429L715 559" stroke="#7442D0" stroke-opacity="0.90" style="animation-delay:0.68s"/><path class="s" d="M715 429L1105 819" stroke="#F96F4F" stroke-opacity="0.52" style="animation-delay:0.31s"/><path class="s" d="M845 429L975 299" stroke="#FFB199" stroke-opacity="0.35" style="animation-delay:6.94s"/><path class="s" d="M1105 429L1235 559" stroke="#2D067B" stroke-opacity="0.77" style="animation-delay:6.57s"/><path class="s" d="M1365 429L1495 559" stroke="#7442D0" stroke-opacity="0.79" style="animation-delay:6.20s"/><path class="s" d="M1495 429L1625 559" stroke="#F96F4F" stroke-opacity="0.37" style="animation-delay:5.83s"/><path class="s" d="M1625 429L1885 689" stroke="#B78CFF" stroke-opacity="0.48" style="animation-delay:5.46s"/><path class="b" d="M1885 299L1755 429L1885 559" stroke="#F96F4F" stroke-opacity="0.91" style="animation-delay:5.09s"/><path class="s" d="M-195 559L65 819" stroke="#2D067B" stroke-opacity="0.60" style="animation-delay:4.72s"/><path class="b" d="M65 429L-65 559L65 689" stroke="#F96F4F" stroke-opacity="0.77" style="animation-delay:4.35s"/><path class="s" d="M65 559L195 689" stroke="#7442D0" stroke-opacity="0.38" style="animation-delay:3.98s"/><path class="s" d="M195 559L585 949" stroke="#F96F4F" stroke-opacity="0.69" style="animation-delay:3.61s"/><path class="s" d="M325 559L455 689" stroke="#B78CFF" stroke-opacity="0.65" style="animation-delay:3.24s"/><path class="s" d="M455 559L845 949" stroke="#C2477A" stroke-opacity="0.75" style="animation-delay:2.87s"/><path class="s" d="M585 559L715 689" stroke="#2D067B" stroke-opacity="0.77" style="animation-delay:2.50s"/><path class="s" d="M715 559L845 689" stroke="#FFB199" stroke-opacity="0.43" style="animation-delay:2.13s"/><path class="s" d="M845 559L975 429" stroke="#C2477A" stroke-opacity="0.33" style="animation-delay:1.76s"/><path class="s" d="M1105 559L1235 689" stroke="#B78CFF" stroke-opacity="0.44" style="animation-delay:1.39s"/><path class="s" d="M1235 559L1625 949" stroke="#C2477A" stroke-opacity="0.60" style="animation-delay:1.02s"/><path class="s" d="M1365 559L1495 689" stroke="#2D067B" stroke-opacity="0.60" style="animation-delay:0.65s"/><path class="s" d="M1495 559L1755 819" stroke="#FFB199" stroke-opacity="0.59" style="animation-delay:0.28s"/><path class="b" d="M1885 429L1755 559L1885 689" stroke="#F96F4F" stroke-opacity="0.95" style="animation-delay:6.91s"/><path class="s" d="M-65 689L325 1079" stroke="#C2477A" stroke-opacity="0.59" style="animation-delay:6.54s"/><path class="s" d="M65 689L195 559" stroke="#F96F4F" stroke-opacity="0.54" style="animation-delay:6.17s"/><path class="s" d="M325 689L585 949" stroke="#7442D0" stroke-opacity="0.38" style="animation-delay:5.80s"/><path class="s" d="M455 689L585 819" stroke="#F96F4F" stroke-opacity="0.40" style="animation-delay:5.43s"/><path class="s" d="M585 689L715 559" stroke="#FFB199" stroke-opacity="0.44" style="animation-delay:5.06s"/><path class="s" d="M715 689L845 819" stroke="#C2477A" stroke-opacity="0.66" style="animation-delay:4.69s"/><path class="b" d="M975 559L845 689L975 819" stroke="#7442D0" stroke-opacity="0.80" style="animation-delay:4.32s"/><path class="s" d="M975 689L1235 949" stroke="#FFB199" stroke-opacity="0.72" style="animation-delay:3.95s"/><path class="s" d="M1235 689L1365 559" stroke="#2D067B" stroke-opacity="0.56" style="animation-delay:3.58s"/><path class="b" d="M1495 559L1365 689L1495 819" stroke="#7442D0" stroke-opacity="0.87" style="animation-delay:3.21s"/><path class="s" d="M1495 689L1755 949" stroke="#C2477A" stroke-opacity="0.53" style="animation-delay:2.84s"/><path class="b" d="M1755 559L1625 689L1755 819" stroke="#7442D0" stroke-opacity="0.79" style="animation-delay:2.47s"/><path class="s" d="M1755 689L1885 819" stroke="#FFB199" stroke-opacity="0.39" style="animation-delay:2.10s"/></g></svg></div>
+  <div class="linkbar">
+    <a href="mailto:yannick.gijbels@koodhmediagroup.com"><span>General enquiries</span><span aria-hidden="true">↗</span></a>
+    <a href="#services"><span>Audio &amp; imaging</span><span aria-hidden="true">↗</span></a>
+    <a href="#work"><span>Photography</span><span aria-hidden="true">↗</span></a>
+    <span><span>KVK 42066318</span></span>
+  </div>
+</footer>
+  </div>
+  <div class="legal">&copy; Koodh Media Group &middot; Audio branding &amp; event photography</div>
+</div>
 <div class="legal">© Koodh Media Group · Audio branding &amp; event photography</div>
 
 <script>
@@ -1003,6 +1073,7 @@ BAT  <b>76%</b>  <em>● GPS</em></code>`
   }
   const t1=mountTunnel(document.getElementById("tunnel"),{n:34,seed:11});
   mountTunnel(document.getElementById("tunnel2"),{n:22,seed:29,speed:90});
+  window.__mountTunnel=mountTunnel;
 
   /* ---------- hero scroll story ---------- */
   const say=document.getElementById("say");
@@ -1024,4 +1095,57 @@ BAT  <b>76%</b>  <em>● GPS</em></code>`
 })();
 </script>
 
+
+<script>
+(()=>{
+  const API="https://clr.koodh.com/api/news";
+  const CL=["a","b","c","d"];
+  const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const magnet=b=>{b.addEventListener("pointermove",e=>{const r=b.getBoundingClientRect();b.style.setProperty("--mx",((e.clientX-r.left-r.width/2)*.18).toFixed(1)+"px");b.style.setProperty("--my",((e.clientY-r.top-r.height/2)*.3).toFixed(1)+"px")});b.addEventListener("pointerleave",()=>{b.style.setProperty("--mx","0px");b.style.setProperty("--my","0px")})};
+
+  /* homepage: news cards from the Clara API */
+  fetch(API+"/koodh-media-group/homepagina").then(r=>r.json()).then(d=>{
+    const items=(d.items||[]).filter(it=>it&&it.title);
+    const stack=document.querySelector("#work .stack");
+    if(!items.length||!stack)return;
+    stack.innerHTML=items.map((it,i)=>
+      '<article class="sc news '+CL[i%4]+'" style="--i:'+i+'">'
+      +'<div class="l"><div><h3>'+esc(it.title)+'</h3></div></div>'
+      +'<div class="circle">'+(it.image_url?'<img src="'+esc(it.image_url)+'" alt="" loading="lazy">':'')+'</div>'
+      +'<div class="r"><a class="visit" href="'+esc(it.url||("/nieuws/"+it.slug))+'">View project <i>&rarr;</i></a></div>'
+      +'</article>').join("");
+    if(matchMedia("(hover:hover)").matches&&!matchMedia("(prefers-reduced-motion: reduce)").matches)
+      stack.querySelectorAll(".visit").forEach(magnet);
+  }).catch(()=>{/* static fallback cards stay */});
+
+  /* article route: /nieuws/<slug> */
+  const m=location.pathname.match(/^\/nieuws\/([^\/?#]+)/);
+  if(!m)return;
+  document.body.classList.add("am");
+  const av=document.getElementById("aview");av.hidden=false;
+  const mk=document.getElementById("mark");if(mk)mk.setAttribute("href","/");
+  if(window.__mountTunnel){const t=document.getElementById("tunnel3");if(t)window.__mountTunnel(t,{n:22,seed:29,speed:90});}
+  window.scrollTo(0,0);
+  fetch(API+"/articles/"+encodeURIComponent(m[1])).then(r=>{if(!r.ok)throw new Error();return r.json()}).then(a=>{
+    document.title=a.title+" \u00b7 Koodh Media Group";
+    document.getElementById("atitle").textContent=a.title;
+    const meta=[];
+    if(a.published_at)meta.push(new Date(a.published_at).toLocaleDateString("en-GB",{day:"numeric",month:"long",year:"numeric"}));
+    if(a.category&&a.category.name)meta.push(a.category.name);
+    if(a.author_name)meta.push(a.author_name);
+    document.getElementById("ameta").textContent=meta.join("  \u00b7  ");
+    if(a.tags&&a.tags.length)document.getElementById("atags").innerHTML=a.tags.map(t=>"<span>"+esc(typeof t==="string"?t:(t.name||""))+"</span>").join("");
+    const fig=document.getElementById("ahero");
+    if(a.image_url){const im=fig.querySelector("img");im.src=a.image_url;im.alt=a.title;
+      if(a.image_caption_html)fig.querySelector("figcaption").innerHTML=a.image_caption_html;
+    }else fig.remove();
+    const ab=document.getElementById("abody");ab.innerHTML=a.body||"";
+    if(a.image_caption_html){const dup=ab.querySelector(".clara-image-credit");if(dup)dup.closest("p")?dup.remove():null;}
+  }).catch(()=>{
+    document.getElementById("atitle").textContent="Article not found";
+    document.getElementById("ahero").remove();
+    document.getElementById("abody").innerHTML='<p class="aerr">This article could not be loaded. <a href="/">Back to the homepage</a>.</p>';
+  });
+})();
+</script>
 </body></html>

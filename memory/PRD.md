@@ -20,6 +20,7 @@ Sections: hero (animated tunnel + pills), trusted-by strip, selected work (4 cas
 - 2026-10-21: Exact 1-on-1 rebuild served on the Emergent preview; all embedded photos/logos reused; favicon added; verified desktop 1366px, tablet 768px, mobile 375px; backend /api/ healthy.
 - 2026-10-24: FAQ section removed on user request (section markup + nav link; unused .faq CSS left in place, harmless).
 - 2026-10-24: Trusted-by logo "Radiogroep" replaced with the user-supplied UpLite logo (white background made transparent, embedded as base64); on user request recolored to white to match the other logos.
+- 2026-10-24: News integration live — "Selected work" cards fetch from https://clr.koodh.com/api/news/koodh-media-group/homepagina (HTTPS, avoids mixed content; static cards remain as fallback). Article view at /nieuws/<slug> (SPA fallback route in the same index.html) fetches https://clr.koodh.com/api/news/articles/{slug_or_id}, reuses homepage nav/footer/logo, renders title, date, tags, hero image + credit, body HTML incl. audio players. mountTunnel exposed as window.__mountTunnel for the cloned footer (id tunnel3). Duplicate leading image-credit paragraph stripped from body when already shown as figcaption.
 
 ## Backlog / next tasks
 - P1: Working contact form (saves enquiries to DB) if user wants more than mailto.
